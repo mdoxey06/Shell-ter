@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Sign Up</title>	
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+            $(function(){
+              $('#myCarousel').carousel();
+            });
+        </script>
+        <link rel="stylesheet" href="mainstyle.css" />
+        <!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+	</head>
+    <body>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div class="outer-div" id="firstSlide">
+                        <div class="inner-div">
+                            <form>
+                                <p>Do you want to live on or off campus?</p>
+                                <input type="button" name="onCampus" value="On Campus" onclick="location.href = 'http://reslife.umd.edu/';">
+                                <input type="button" name="offCampus" value="Off Campus" onclick="$('#myCarousel').carousel('next')">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="outer-div" id="secondSlide">
+                        <div class="inner-div">
+                             <form>
+                                <p>What is your price range ?</p>
+                                <span id="range">$600</span>
+                                <input type="range" name="price" id="points" value="600" min="600" max="2000" onchange="showValue(this.value)" />
+                                    <script type="text/javascript">
+                                        function showValue(newValue)
+                                        {
+                                            document.getElementById("range").innerHTML="$"+newValue;
+                                        }
+                                    </script>
+                                <input type="button" name="next" value="Next" onclick="$('#myCarousel').carousel('next')">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="outer-div" id="thirdSlide">
+                        <div class="inner-div">
+                            <form>
+                                <p>Where do you want to live ?</p>
+                                <input type="button" name="view" value="View/Varsity" onclick="$('#myCarousel').carousel('next')"><br>
+                                <input type="button" name="commons" value="Commons" onclick="$('#myCarousel').carousel('next')"><br>
+                                <input type="button" name="route1" value="Route 1" onclick="$('#myCarousel').carousel('next')">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="outer-div" id="fourthSlide">
+                        <div class="inner-div">
+                            <form>
+                                <input type="text" name="">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
