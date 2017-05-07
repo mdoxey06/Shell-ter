@@ -33,9 +33,10 @@
 	$result = $db_connection->query($query);
 	if (!$result) {
 		die("Insertion failed: ".$db_connection->error);
-	} 
-				
-	$db_connection->close();
+	} else {
+		$db_connection->close();
+		header( "refresh:5;url=recommendations.php" );
+	}
 	
 	$topPart = <<<EOBODY
         <div class="outer-div" id="calculatingSlide">
