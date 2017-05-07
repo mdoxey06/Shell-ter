@@ -12,7 +12,7 @@
 		$password = $_POST["password"];
 	}
 
-	$_SESSION['email']=$email;
+	$_SESSION['currUser']=$email;
 	$_SESSION['password']=$password;
 
 	$topPart = <<<EOBODY

@@ -35,7 +35,7 @@
 				//If password is correctly 
 				if (password_verify($passwordValue, $passwordDatabase)) {
 					$_SESSION["currUser"]= $row["email"];
-					header("Location: recommendations.php");
+					header("Location: Options.html");
 				}
 				else {
 					$bottomPart .= "<script>document.getElementById(\"modalText\").innerHTML= \"Wrong Password.\";";
@@ -81,12 +81,12 @@
 		            <form id="loginform" action= "login.php" method= "post" class="form-horizontal" role="form">
 		               <div style="margin-bottom: 25px" class="input-group">
 		                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-		                  <input id="email" type="text" class="form-control" name="email" placeholder="johnsmith@gmail.com">
+		                  <input id="email" type="text" class="form-control" name="email" placeholder="johnsmith@gmail.com" required="required">
 		               </div>
 
 		               <div style="margin-bottom: 1em" class="input-group">
 		                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-		                  <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+		                  <input id="password" type="password" class="form-control" name="password" placeholder="Password" required="required">
 		               </div>
 		               <br>
 		               <div style="margin-top:.1px" class="form-group">
@@ -99,7 +99,7 @@
 		                  <div class="col-md-12 control">
 		                    <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
 		                        Don't have an account?
-		                        <a href="signup.html">
+		                        <a href="register.php">
 		                        Register
 		                        </a>
 		                     </div>

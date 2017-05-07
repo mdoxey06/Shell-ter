@@ -24,7 +24,7 @@
         $gym = 0;
     }
 
-    $email = $_SESSION['email'];
+    $email = $_SESSION['currUser'];
     $password = $_SESSION['password'];
     $hashed = password_hash($password, PASSWORD_DEFAULT);
 
