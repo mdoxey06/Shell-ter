@@ -26,7 +26,7 @@
 
     $email = $_SESSION['email'];
     $password = $_SESSION['password'];
-	$query = sprintf("UPDATE $table SET location=%s,price=%s,pool='%s',pets='%s',gym='%s' WHERE email='%s' AND password ='%s'", $location,$price,$pool,$pets,$gym,$email,$password); 
+	$query = sprintf("UPDATE $table SET location='%s',price='%s',pool=%s,pets=%s,gym=%s WHERE email='%s' AND password ='%s'", $location,$price,$pool,$pets,$gym,$email,$password); 
 
 
 	$result = $db_connection->query($query);
