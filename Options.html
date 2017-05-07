@@ -21,18 +21,13 @@
 			<div class="item active">
             <div class="outer-div" id="firstSlide">
                         <div class="inner-div">
-                            <form method= "post">
-                                <p>What would you like to do?</p>
-								<script>
-									function submitForm(action)
-														{
-															   document.getElementById('form').action = action;
-																document.getElementById('form').submit();
-														}
-								</script>
-                                <input type="submit" name="view" value="View my Recommendations" onclick = "submitForm('recommendations.php');"></input></br></br>
-                                <input type="submit" name="update" value="Update my Recommendations" onclick= "submitForm('update1.php');"></input>
+							<p>What would you like to do?</p>
+                            <form method= "post" action= "recommendations.php">
+                                <input type="submit" name="view" value="View my Recommendations"></input></br></br>
                             </form>
+							<form method= "post" action= "update.php">
+							<input type="submit" name="update" value="Update my Recommendations"></input>
+							</form>
                         </div>
 			</div>
 			</div>
