@@ -22,6 +22,7 @@ function generatePage($body, $title) {
                 window.location.href = url;
             }
         </script>
+        <script src="validate.js"></script>
         <link rel="stylesheet" href="mainstyle.css" />
     </head>
     <body>
