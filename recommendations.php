@@ -80,8 +80,8 @@
         $result = $db_connection->query($query);
         $result -> data_seek(0);
         $row = $result->fetch_array(MYSQLI_ASSOC);
-        echo $row['image'];
-        $table.= "<tr><td><a href='".$aptLinks[$apt]."'>".$apt."</a></td><td>".$aptScores[$apt]."%</td></tr>";
+        $image = "<img src='data:image/jpeg;base64,".base64_encode( $row['image'] )."'/>";
+        $table.= "<tr><td>".$image."</td><td><a href='".$aptLinks[$apt]."'>".$apt."</a></td><td>".$aptScores[$apt]."%</td></tr>";
     }
     $table .= "</tbody></table>";
         
