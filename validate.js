@@ -1,61 +1,44 @@
-/* for the sign up carousel i assume we'll have an event when
- * we go to the next question...if it's an arrow, we can just
-   link that event to that question's validation function */
 
-function validatePassword() {
+window.onsubmit=validateForm;
+
+function validateForm() {
     var password = document.getElementById("password").value;
+    var email= document.getElementById("email").value;
+    var reEmail= /(\w)+@(\w)+/;
+    var rePassword= /[0-9]/;
     errorMessage = "";
-    
-    if (password.length < 8) {
-        errorMessage += "Password must contain at least 8 characters\n";
-    }
-    
-    verifyPassword = document.getElementById("verifyPassword").value;
-    if (password !== verifyPassword) {
-        errorMessage += "Passwords must match\n";
-    }
-    
-    var re = /[0-9]/;
-    if (!password.match(re)) {
-        errorMessage += "Password must contain at least 1 number\n";
-    }
-    
-    re = /[a-z]/;
-     if(!password.match(re)) {
-        errorMessage += "Password must contain at least one lowercase letter\n";
-    }
-     
-    re = /[A-Z]/;
-    if(!password.match(re)) {
-        errorMessage += "Password must contain at least one uppercase letter\n";
-    }
-     
-    if (errorMessage !== "") {
-        alert(errorMessage);
-        // For right now we'll use JS' alert, but we can change it to JQuery Dialog or something more
-        // customizable at a later time
-        return false;
-    }
-    else return true;
-}
 
-function validatePhoneNumber() {
-    var phoneNumber = document.getElementById("phoneNumber");
-    var numRE1 = /[0-9]{10}/;
-    var numRE2 = /[0-9]{3}-[0-9]{3}-[0-9]{4}/;
+    //Password validation portion
+    if (password.length < 8) {
+        errorMessage += "Password must contain at least 8 characters.<br>";
+    }
     
-    if (phoneNumber.match(numRE1) || phoneNumber.match(numRE2)) {
-        return true;
+    if (!password.match(rePassword)) {
+        errorMessage += "Password must contain at least 1 number.<br>";
+    }
+    
+    rePassword = /[a-z]/;
+     if(!password.match(rePassword)) {
+        errorMessage += "Password must contain at least one lowercase letter.<br>";
+    }
+     
+    rePassword = /[A-Z]/;
+    if(!password.match(rePassword)) {
+        errorMessage += "Password must contain at least one uppercase letter.<br>";
+    }
+
+    //Email validation portion
+    if (!email.match(reEmail)) {
+        errorMessage += "Improper email formatting.";
+    }
+
+    //Checking to see if there are any errors with the message
+    if (errorMessage !== "") {
+        document.getElementById("modalText").innerHTML= errorMessage;
+        $('#myModal').modal('show');
+        return false;
     }
     else {
-        alert("Please enter a valid phone number (###-###-####)");
-        return false;
+        return true;
     }
 }
-
-
-
-
-
-
-
