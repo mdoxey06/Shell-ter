@@ -26,9 +26,10 @@
 
     $email = $_SESSION['email'];
     $password = $_SESSION['password'];
+    $hashed = password_hash($password, PASSWORD_DEFAULT);
 
 	$query = sprintf("insert into user(email, password, location, price, pool, pets, gym) values ('%s', '%s', '%s', '%s', %s, %s, %s)", 
-	$email, $password, $location, $price, $pool, $pets, $gym);
+	$email, $hashed, $location, $price, $pool, $pets, $gym);
 
 	$result = $db_connection->query($query);
 	if (!$result) {
