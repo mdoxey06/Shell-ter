@@ -2,16 +2,15 @@
 <html>
     <head> 
         <meta content="text/html" charset=UTF-8" />
-        <title>View Recommendations</title>	
-    </head>
-            
+        <title>View Recommendations</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">            
     <body>
         
     <h1>Recommendations</h1>
 <?php
     session_start();
     
-    $db_connection = new mysqli("localhost", "user", "terps", "shellterp");
+    $db_connection = new mysqli("localhost", "shell", "terps", "shellterp");
     if ($db_connection->connect_error) {
         die($db_connection->connect_error);
     }
@@ -25,6 +24,8 @@
     $colNames = ["location", "price", "pool", "pets", "gym"];
     
     function incApartment($aptName) {
+        global $trow, $landmark, $view, $commons, $courtyards;
+        
         switch ($aptName) {
             case "Terrapin Row":
                 $trow++;
@@ -45,10 +46,12 @@
     }
     
     function queryCol($col, $currUser) {
-        if ($col != price)
-            $query = "select aptName, offCampus.".$col." from offCampus, user where user.email = ".$currUser." and offCampus.".$col." = user.".$col;
+        global $db_connection;
+        
+        if ($col != "price")
+            $query = sprintf("select aptName, offCampus.%s from offCampus, user where user.email = %s and offCampus.%s = user.%s", $col, $currUser, $col, $col);
         else 
-            $query = "select aptName, offCampus.price from offCampus, user where user.email = ".$currUser." and offCampus.price >= (user.price - 100) and offCampus.price <= (user.price + 100)";
+            $query = sprintf("select aptName, offCampus.price from offCampus, user where user.email = %s and offCampus.price >= (user.price - 100) and offCampus.price <= (user.price + 100)", $currUser);
             
         $result = $db_connection->query($query);
         
@@ -67,15 +70,17 @@
     $aptLinks = ["Terrapin Row" => "http://www.terrapinrow.com/", "Landmark" => "http://www.landmarkcollegepark.com/",
                     "View" => "http://uviewapts.com/", "Commons" => "http://southcampuscommons.com/", "Courtyards" => "http://umdcourtyards.com/"];
     asort($aptScores);
-    
-    $query = "select aptName, image from offCampus";
-    $result = $db_connection->query($query);
-    
+
     // TODO: INSERTING IMAGES!!!!!!
     
-    $table = "<table class='table'><thead><tr><th><strong>Apartment</strong></th><th><strong>Match Percentage</strong></th></tr></thead><tbody>";
+    $table = "<table class='table'><thead><tr><th><strong>Image</strong></th><th><strong>Apartment</strong></th><th><strong>Match Percentage</strong></th></tr></thead><tbody>";
     foreach ($aptScores as $apt) {
         $matchPct = (100*$aptScores[$apt])/5;
+        $query = sprintf("select image from offCampus where aptName = %s", $apt);
+        $result = $db_connection->query($query);
+        $result -> data_seek(0);
+        $row = $result->fetch_array(MYSQLI_ASSOC);
+        echo $row['image'];
         $table.= "<tr><td><a href='".$aptLinks[$apt]."'>".$apt."</a></td><td>".$aptScores[$apt]."%</td></tr>";
     }
     $table .= "</tbody></table>";
