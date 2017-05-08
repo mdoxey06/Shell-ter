@@ -36,7 +36,7 @@
 		die("Insertion failed: ".$db_connection->error);
 	} else {
 		$db_connection->close();
-		header( "refresh:5;url=recommendations.php" );
+		header( "refresh:3;url=recommendations.php" );
 	}
 	
 	$topPart = <<<EOBODY
