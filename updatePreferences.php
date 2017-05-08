@@ -14,15 +14,13 @@
 	$_SESSION['pets']=$pets;
 
 
-
 	$topPart = <<<EOBODY
 	<form action="updated.php" method="post">
         <div class="outer-div" id="updateSlide">
-			
            	<div class="inner-div">
 				<p>Do you want to live on or off campus?</p>
-		        <input type="radio" name="location" value="On Campus" onclick="window.location.href = 'http://reslife.umd.edu/';"> On Campus<br>
-		        <input type="radio" name="location" value="Off Campus"> Off Campus <br>
+		        <input type="radio" name="location" value="On Campus" onclick="location.href = 'http://reslife.umd.edu/';"> On Campus<br>
+		        <input type="radio" name="location" value="Off Campus"> Off Campus 
 				<br>
 				<hr noshade>
 				<br>
@@ -36,31 +34,26 @@
                         </script>
 				<br>
 				<hr noshade>
-				<br>
 				<p>Where do you want to live?</p>
-                    <input type="radio" name="spec" value="xfinity Side">Xfinity
+                    <input type="radio" name="spec" value="xfinity Side">Xfinity<br>
                     <input type="radio" name="spec" value="southCampus">South Campus
 				<br>
 				<hr noshade>
-				<br>
 				 <p>Do you want a pool?</p>
-                <input type="radio" name="pool" value="1">Yes
+                <input type="radio" name="pool" value="1">Yes<br>
                 <input type="radio" name="pool" value="0">No
 				<br>
 				<hr noshade>
-				<br>
 				 <p>Do you own a pet?</p>
-                <input type="radio" name="pet" value="1">Yes
+                <input type="radio" name="pet" value="1">Yes<br>
                 <input type="radio" name="pet" value="0">No
 				<br>
 				<hr noshade>
-				<br>
 				<p>Do you care about having an in-unit gym?</p>
                 <input type="radio" name="gym" value="1"> Yes<br>
-                <input type="radio" name="gym" value="0"> No<br>
+                <input type="radio" name="gym" value="0"> No
 				<br>
 				<hr noshade>
-				<br>
 				<input type="submit" name="Update" value="Update">
             </div>
         </div>

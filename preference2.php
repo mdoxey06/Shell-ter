@@ -6,6 +6,7 @@
 	<form action="preference3.php" method="post">
 		<div class="outer-div" id="secondSlide">
             <div class="inner-div">
+			<p>What would you like to pay per month?</p>
                 <span id="range">$600</span>
                     <input type="range" name="price" id="points" value="700" min="700" max="1800" onchange="showValue(this.value)" />
                          <script type="text/javascript">

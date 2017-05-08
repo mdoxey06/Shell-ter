@@ -16,7 +16,9 @@ function generatePage($body, $title="Shell-ter") {
     </head>
             
     <body>
+        <div id = "login">
             $body
+        </div>
     </body>
 </html>
 EOPAGE;

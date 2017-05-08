@@ -44,8 +44,8 @@
 	background-image: url(register.jpeg);
   	background-size: 2000px 1200px;
 	background-repeat: no-repeat;
+	height: 1200px;
 }
-
 
 #calculatingSlide {
 	background-color: #474851;
@@ -77,10 +77,6 @@ li {
 	width: 100%;
 	height: 700px;
     margin: 0 auto;
-}
-
-.buttons {
-	width: 250px;
 }
 
 input[type=button], input[type=submit] {
