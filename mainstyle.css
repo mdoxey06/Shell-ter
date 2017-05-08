@@ -1,7 +1,7 @@
 #firstSlide {
 	background-image: url(apartment1.jpeg);
   	background-size: cover;
-  	height: 700px;
+  	height: 1200px;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -9,7 +9,7 @@
 #secondSlide {
 	background-image: url(apartment2.jpeg);
   	background-size: cover;
-  	height: 700px;
+  	height: 1200px;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -17,7 +17,7 @@
 #thirdSlide {
 	background-image: url(apartment3.jpeg);
   	background-size: cover;
-  	height: 700px;
+  	height: 1200px;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -25,7 +25,7 @@
 #fourthSlide {
 	background-image: url(apartment4.jpeg);
   	background-size: cover;
-  	height: 700px;
+  	height: 1200px;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -33,7 +33,7 @@
 #fifthSlide {
 	background-image: url(apartment5.jpeg);
   	background-size: cover;
-  	height: 700px;
+  	height: 1200px;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -41,7 +41,7 @@
 #sixthSlide {
 	background-image: url(apartment6.jpeg);
   	background-size: cover;
-  	height: 700px;
+  	height: 1200px;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -49,9 +49,18 @@
 #registerSlide {
 	background-image: url(register.jpeg);
   	background-size: cover;
-  	height: 700px;
+  	height: 1200px;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+#updateSlide {
+	background-image: url(register.jpeg);
+  	background-size: cover;
+  	height: 1200px;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%
 }
 
 
@@ -88,7 +97,7 @@ li {
 }
 
 input[type=button], input[type=submit] {
-	width: 250px;
+	width: 170px;
 	background-color: #474851; 
 	color: white; 
 	padding: 12px 15px;
