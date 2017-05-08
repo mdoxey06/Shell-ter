@@ -3,7 +3,25 @@
 	require_once("buildPage.php");
 
 	$topPart = <<<EOBODY
-	<form action="register.php" method="post">
+	<div id="myModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <div class="modal-content">
+		      <div class="modal-header" style= "background-color: #CD5C5C">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Warning</h4>
+		      </div>
+		      <div class="modal-body" style= "background-color: #F0F8FF">
+		        <p id= "modalText"></p>
+		      </div>
+		      <div class="modal-footer" style= "background-color: #F0F8FF">
+		        <button type="button" class="btn btn-primary" data-dismiss="modal" >OK</button>
+		      </div>
+		    </div>
+		  </div>
+	</div>
+
+	<form action="preference1.php" method="post">
 		<div class="outer-div" id="registerSlide">
 		   <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 		      <div class="panel panel-info panel-primary panel-transparent" >
@@ -32,7 +50,7 @@
 
 EOBODY;
 	$body = $topPart;
-	$title = "SignUp1";
+	$title = "Register";
 	$page = generatePage($body,$title);
 
 	echo $page;
