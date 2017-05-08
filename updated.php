@@ -40,7 +40,7 @@
         </div>
 EOBODY;
 	$body = $topPart;
-	$title = "SignUp";
+	$title = "Update Preferences";
 	$page = generatePage($body,$title);
 
 	echo $page;

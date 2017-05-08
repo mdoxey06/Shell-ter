@@ -67,7 +67,7 @@
 
 EOBODY;
 	$body = $topPart;
-	$title = "SignUp6";
+	$title = "Update Preferences";
 	$page = generatePage($body,$title);
 
 	echo $page;
