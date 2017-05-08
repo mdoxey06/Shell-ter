@@ -14,13 +14,14 @@
 	$_SESSION['pets']=$pets;
 
 
+
 	$topPart = <<<EOBODY
 	<form action="updated.php" method="post">
         <div class="outer-div" id="updateSlide">
 			
            	<div class="inner-div">
 				<p>Do you want to live on or off campus?</p>
-		        <input type="radio" name="location" value="On Campus" onclick="location.href = 'http://reslife.umd.edu/';"> On Campus<br>
+		        <input type="radio" name="location" value="On Campus" onclick="window.location.href = 'http://reslife.umd.edu/';"> On Campus<br>
 		        <input type="radio" name="location" value="Off Campus"> Off Campus <br>
 				<br>
 				<hr noshade>

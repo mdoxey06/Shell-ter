@@ -13,9 +13,6 @@
             });
         </script>
         <link rel="stylesheet" href="mainstyle.css" />
-        <!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
 	</head>
     <body>       
 			<div class="item active">
@@ -23,11 +20,15 @@
                         <div class="inner-div">
 							<p>What would you like to do?</p>
                             <form method= "post" action= "recommendations.php">
-                                <input type="submit" name="view" value="View my Recommendations"></input></br></br>
+                                <input type="submit" name="view" value="View Recommendations" class= "buttons"></input></br></br>
                             </form>
 							<form method= "post" action= "updatePreferences.php">
-							<input type="submit" name="update" value="Update my Recommendations"></input>
+							    <input type="submit" name="update" value="Update Preferences" class= "buttons"></input>
 							</form>
+                            <br>
+                            <form method= "post" action= "index.php">
+                                <input type="submit" name="update" value="Logout" class= "buttons"></input>
+                            </form>
                         </div>
 			</div>
 			</div>

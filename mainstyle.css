@@ -1,48 +1,48 @@
 #firstSlide {
 	background-image: url(apartment1.jpeg);
-  	height: 1200px;
+	background-size: 2000px 1200px;
 	background-repeat: no-repeat;
 }
 
 #secondSlide {
 	background-image: url(apartment2.jpeg);
-  	height: 1200px;
+  	background-size: 2000px 1200px;
 	background-repeat: no-repeat;
 }
 
 #thirdSlide {
 	background-image: url(apartment3.jpeg);
-  	height: 1200px;
+  	background-size: 2000px 1200px;
 	background-repeat: no-repeat;
 }
 
 #fourthSlide {
 	background-image: url(apartment4.jpeg);
-  	height: 1200px;
+  	background-size: 2000px 1200px;
 	background-repeat: no-repeat;
 }
 
 #fifthSlide {
 	background-image: url(apartment5.jpeg);
-  	height: 1200px;
+  	background-size: 2000px 1200px;
 	background-repeat: no-repeat;
 }
 
 #sixthSlide {
 	background-image: url(apartment6.jpeg);
-  	height: 1200px;
+  	background-size: 2000px 1200px;
 	background-repeat: no-repeat;
 }
 
 #registerSlide {
 	background-image: url(register.jpeg);
-  	height: 1200px;
+  	background-size: 2000px 1200px;
 	background-repeat: no-repeat;
 }
 
 #updateSlide {
 	background-image: url(register.jpeg);
-  	height: 1200px;
+  	background-size: 2000px 1200px;
 	background-repeat: no-repeat;
 }
 
@@ -79,6 +79,10 @@ li {
     margin: 0 auto;
 }
 
+.buttons {
+	width: 250px;
+}
+
 input[type=button], input[type=submit] {
 	width: 200px;
 	background-color: #474851; 
@@ -90,6 +94,7 @@ input[type=button], input[type=submit] {
 	cursor: pointer; 
 	font-size: 1em;
 	letter-spacing: 1px;
+	text-align: center;
 }
 
 p, span {

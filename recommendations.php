@@ -85,7 +85,6 @@
                     "View" => "http://uviewapts.com/", "Commons" => "http://southcampuscommons.com/", "Courtyards" => "http://umdcourtyards.com/"];
     arsort($aptScores);
 
-    // TODO: INSERTING IMAGES!!!!!!
     
     $table = "<table class='table table-striped table-bordered'><thead><tr><th><strong>Image</strong></th><th><strong>Apartment</strong></th><th><strong>Match Percentage</strong></th></tr></thead><tbody>";
     foreach (array_keys($aptScores) as $apt) {

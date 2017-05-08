@@ -78,7 +78,7 @@
 		            <div class="panel-title">Sign In</div>
 		         </div>
 		         <div style="padding-top:30px" class="panel-body" >
-		            <form id="loginform" action= "login.php" method= "post" class="form-horizontal" role="form">
+		            <form id="loginform" action= "index.php" method= "post" class="form-horizontal" role="form">
 		               <div style="margin-bottom: 25px" class="input-group">
 		                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 		                  <input id="email" type="text" class="form-control" name="email" placeholder="johnsmith@gmail.com" required="required">
