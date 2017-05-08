@@ -11,9 +11,9 @@
             <div class="navbar-header">
                 <div class="collapse navbar-collapse">
                   <ul class="nav navbar-nav">
-                    <li><a class="navbar-brand" href="Options.html">Shell-ter</a></li>
+                    <li class="active"><a class="navbar-brand" href="Options.html">Shell-ter</a></li>
                     <li><a href="Options.html">Home</a></li>
-                    <li><a href="update.php">Update Preferences</a></li>
+                    <li><a href="updatePreferences.php">Update Preferences</a></li>
                   </ul>
                 </div>
             </div>
