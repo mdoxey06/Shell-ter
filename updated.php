@@ -20,17 +20,18 @@
 	$pool = $_POST['pool'];
 	$pets = $_POST['pet'];
 	$gym = $_POST['gym'];
-    $email = $_SESSION['email'];
-    $password = $_SESSION['password'];
-	$query = sprintf("UPDATE $table SET location='%s',price='%s',pool=%s,pets=%s,gym=%s WHERE email='%s' AND password ='%s'", $location,$price,$pool,$pets,$gym,$email,$password); 
+    $email = $_SESSION['currUser'];
+	$query = sprintf("UPDATE $table SET location='%s',price='%s',pool=%s,pets=%s,gym=%s WHERE email='%s'", $location,$price,$pool,$pets,$gym,$email); 
 
 
 	$result = $db_connection->query($query);
 	if (!$result) {
 		die("Updating failed: ".$db_connection->error);
-	} 
+	} else {
+		$db_connection->close();
+		header( "refresh:5;url=recommendations.php" );
+	}
 				
-	$db_connection->close();
 	$topPart = <<<EOBODY
         <div class="outer-div" id="calculatingSlide">
             <div class="inner-div">
